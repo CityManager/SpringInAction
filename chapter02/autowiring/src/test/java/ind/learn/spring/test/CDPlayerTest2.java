@@ -3,6 +3,7 @@ package ind.learn.spring.test;
 import ind.learn.spring.component.CDPlayerConfig;
 import ind.learn.spring.component.CompactDisc;
 import ind.learn.spring.component.MediaPlayer;
+import ind.learn.spring.component.SetPeppers2;
 import ind.learn.spring.component2.CDPlayerConfig2;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -32,9 +33,13 @@ public class CDPlayerTest2 {
     @Resource(name = "lonelyHeartsClub")
     private CompactDisc cd;
 
+    @Resource
+    private SetPeppers2 sp;  // 直接指明具体类而不是接口,则不需要 name参数
+
     @Test
     public void cdShouldNotBeNull() {
         Assert.assertNotNull(cd);
+        Assert.assertNotNull(sp);
     }
 
     @Test
